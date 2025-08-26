@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
+import { config } from "@/data/config";
 import {
   FaAws,
   FaCss3,
@@ -43,8 +44,8 @@ import { TbTerminal2 } from "react-icons/tb";
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "abhijitzende75@gmail",
-    href: "mailto:abhijitzende75@gmail.com",
+    content: "jabeer@gmail",
+    href: "mailto:jabeer@gmail.com",
     icon: <FaEnvelope height={"50px"} />,
   },
   {
@@ -55,13 +56,13 @@ const CONTACT_LINKS = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/zende-abhijit/",
-    content: "/zende-abhijit",
+    href: "https://www.linkedin.com/in/jabeer/",
+    content: "/jabeer",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/Abhiz2411",
+    href: "https://github.com/jabeer",
     content: "/naresh-khatri",
     icon: <FaGithub height={"50px"} />,
   },
@@ -251,9 +252,9 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Naresh Khatri</p>
+                <p className="text-center text-xl">{config.author}</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                  AI Enthusiast
                 </div>
               </div>
             </div>
@@ -287,7 +288,7 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Abhijit, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and 
+              Hey there! I&apos;m Jabeer, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and 
               Database management with hands-on experience in deploying & automating workflows, and 
               collaborating with foreign clients. Strong analytical skills,effective communication,
               and a team-oriented approach to driving process improvements and delivering results.
