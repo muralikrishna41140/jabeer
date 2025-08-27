@@ -43,7 +43,7 @@ The portfolio website is built using the following tools and technologies:
 
 - **Frontend:** Next.js, React, Tailwind CSS, Shadcn, Aceternity UI
 - **Animations:** GSAP, Framer Motion, Spline Runtime
-- **Other Tools:** Resend, Socket.io, Zod
+- **Other Tools:** Resend, Zod
 
 ## 🌟 Getting Started
 
