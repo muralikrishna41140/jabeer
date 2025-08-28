@@ -889,67 +889,57 @@ const projects: Project[] = [
       );
     },
   },
-  { // 03. Portfolio project
-    id: "portfolio",
-    category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/myportfolio/landing.png",
-    screenshots: ["assets/projects-screenshots/myportfolio/landing.png"],
-    live: "https://www.jabeer.com/",
-    github:"https://github.com/jabeer/3D-interactive-portfolio",
+  { // 03. Data Analytics Dashboard project
+    id: "dataanalyticsdashboard",
+    category: "Data Analytics",
+    title: "Real-Time Data Analytics Dashboard",
+    src: "/assets/projects-screenshots/smartjobtracker/05.png",
+    screenshots: ["assets/projects-screenshots/smartjobtracker/05.png"],
+    live: "#",
+    github:"#",
     skills: {
       frontend: [
+        PROJECT_SKILLS.react,
         PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.framerMotion,
         PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
+        PROJECT_SKILLS.next,
       ],
-      backend: [],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.docker,
+      ],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+            A comprehensive real-time data analytics dashboard that visualizes complex 
+            datasets with interactive charts and graphs. Built for scalability and 
+            performance with modern tech stack.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
+            Interactive Visualizations
           </TypographyH3>
           <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
+            Dynamic charts and graphs that update in real-time, providing insights
+            into data trends and patterns with beautiful, responsive design.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/myportfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
+              `${BASE_PATH}/smartjobtracker/05.png`,
+              `${BASE_PATH}/smartjobtracker/06.png`,
             ]}
           />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
+          <TypographyH3 className="my-4 ">Data Processing</TypographyH3>
           <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
+            Efficient data processing pipeline with PostgreSQL and Python backend
+            for handling large datasets and real-time updates.
           </p>
-          <SlideShow images={[`${BASE_PATH}/myportfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/myportfolio/projects.png`,
-              `${BASE_PATH}/myportfolio/project.png`,
-            ]}
-          />
+          <SlideShow images={[`${BASE_PATH}/smartjobtracker/07.png`]} />
           <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
+            Turning raw data into actionable insights.
           </p>
         </div>
       );
