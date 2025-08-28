@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { config } from "@/data/config";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
@@ -49,10 +50,14 @@ const ContactForm = () => {
         router.push("/");
         clearTimeout(timer);
       }, 1000);
-    } catch (err) {
+    } catch (err: any) {
+      const errorMessage = err.message.includes("Email service is not configured") 
+        ? `Email service temporarily unavailable. Please contact directly at ${config.email}`
+        : "Something went wrong! Please check the fields.";
+      
       toast({
         title: "Error",
-        description: "Something went wrong! Please check the fields.",
+        description: errorMessage,
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),

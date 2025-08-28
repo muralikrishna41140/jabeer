@@ -3,15 +3,25 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
   email: z.string().email({ message: "Email is invalid!" }),
   message: z.string().min(10, "Message is too short!"),
 });
+
 export async function POST(req: Request) {
   try {
+    // Check if Resend is configured
+    if (!resend) {
+      return Response.json(
+        { error: "Email service is not configured. Please contact directly at " + config.email },
+        { status: 503 }
+      );
+    }
+
     const body = await req.json();
     console.log(body);
     const {
@@ -19,6 +29,7 @@ export async function POST(req: Request) {
       data: zodData,
       error: zodError,
     } = Email.safeParse(body);
+    
     if (!zodSuccess)
       return Response.json({ error: zodError?.message }, { status: 400 });
 
